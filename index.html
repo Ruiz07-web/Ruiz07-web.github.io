@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Calculadora de Nota Necessária</title>
+  <link rel="stylesheet" type="text/css" href="styles.css">
+</head>
+<body>
+  <div class="container">
+    <h2>Calculadora de Nota Necessária</h2>
+
+    <label>Nome do estudante: <input type="text" id="nomeUsuario"></label>
+    <br><br>
+    <label>Matéria: <input type="text" id="materia"></label>
+    <br><br>
+
+    <!-- Coloque o seletor de tipo de média aqui em cima -->
+    <label>
+      Tipo de média:
+      <select id="tipoMedia">
+        <option value="ponderada">Média Ponderada (nota × peso)</option>
+        <option value="simples">Média Simples (só soma as notas)</option>
+      </select>
+    </label>
+    <br><br>
+
+    <!-- Seus fieldsets de notas e pesos -->
+    <fieldset>
+      <legend>Notas e Pesos da P1</legend>
+      <div id="notas-p1">
+        <div>
+          <label>Nota: <input type="number" step="0.01" max="10" class="nota-p1"></label>
+          <label class="label-peso">Peso: <input type="number" step="0.01" class="peso-p1"></label>
+          <button type="button" onclick="removerLinha(this)">Remover</button>
+        </div>
+      </div>
+      <button type="button" onclick="adicionarLinha()">Adicionar Nota</button>
+    </fieldset>
+    <fieldset>
+      <legend>Notas e Pesos da P2</legend>
+      <div id="notas-p2">
+        <div>
+          <label>Nota: <input type="number" step="0.01" max="10" class="nota-p2"></label>
+          <label class="label-peso">Peso: <input type="number" step="0.01" class="peso-p2"></label>
+          <button type="button" onclick="removerLinha(this)">Remover</button>
+        </div>
+      </div>
+      <button type="button" onclick="adicionarLinhaP2()">Adicionar Nota</button>
+    </fieldset>
+    <label>Média Desejada: <input type="number" id="media" step="0.01" value="6"></label>
+    <br><br>
+    <button type="button" onclick="calcular()">Calcular</button>
+    <p id="resultado"></p>
+    <h3>Histórico de usuários:</h3>
+    <button type="button" onclick="toggleHistorico()">Mostrar/Ocultar Histórico</button>
+    <button type="button" onclick="exportarHistoricoPDF()">Exportar Histórico (PDF)</button>
+    <ul id="listaUsuarios" style="display:none;"></ul>
+  </div>
+  <script src="app.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+  <script>
+document.getElementById('tipoMedia').addEventListener('change', function() {
+  const mostrarPeso = this.value === 'ponderada';
+  document.querySelectorAll('.peso-p1, .peso-p2').forEach(input => {
+    input.parentElement.style.display = mostrarPeso ? '' : 'none';
+    if (!mostrarPeso) input.value = 1; // valor padrão para peso se não usar
+  });
+});
+</script>
+</body>
+</html>

@@ -1,0 +1,129 @@
+body {
+  font-family: 'Segoe UI', Arial, sans-serif;
+  background: linear-gradient(120deg, #f4f4f4 60%, #e0e7ff 100%);
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.container {
+  max-width: 600px;
+  width: 100%;
+  margin: 40px auto;
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 4px 24px rgba(0,0,0,0.08);
+  padding: 32px 24px 24px 24px;
+}
+
+h2 {
+  color: #2d3a4b;
+  text-align: center;
+  margin-bottom: 24px;
+}
+
+fieldset {
+  border: 1px solid #d1d5db;
+  border-radius: 8px;
+  margin-bottom: 20px;
+  padding: 16px;
+  background: #f9fafb;
+}
+
+legend {
+  font-weight: bold;
+  color: #374151;
+}
+
+label {
+  display: block;
+  margin: 10px 0 5px;
+  color: #374151;
+  font-size: 1em;
+}
+
+input[type="text"],
+input[type="number"] {
+  padding: 8px;
+  width: 100%;
+  max-width: 250px;
+  border: 1px solid #cbd5e1;
+  border-radius: 4px;
+  margin-bottom: 8px;
+  font-size: 1em;
+  background: #f3f4f6;
+  transition: border 0.2s;
+}
+
+input[type="text"]:focus,
+input[type="number"]:focus {
+  border: 1.5px solid #6366f1;
+  outline: none;
+  background: #fff;
+}
+
+button {
+  padding: 8px 18px;
+  background-color: #6366f1;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  margin: 6px 0;
+  font-size: 1em;
+  transition: background 0.2s, box-shadow 0.2s;
+  box-shadow: 0 2px 8px rgba(99,102,241,0.08);
+}
+
+button:hover {
+  background-color: #4f46e5;
+}
+
+#resultado {
+  margin-top: 24px;
+  font-size: 1.15em;
+  color: #1e293b;
+  background: #e0e7ff;
+  border-radius: 6px;
+  padding: 14px;
+  min-height: 32px;
+  box-shadow: 0 1px 4px rgba(99,102,241,0.08);
+}
+
+h3 {
+  color: #2d3a4b;
+  margin-top: 32px;
+}
+
+ul#listaUsuarios {
+  list-style: none;
+  padding: 0;
+  margin-top: 12px;
+  background: #f3f4f6;
+  border-radius: 8px;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.04);
+}
+
+ul#listaUsuarios li {
+  padding: 14px 12px;
+  border-bottom: 1px solid #e5e7eb;
+  font-size: 1em;
+}
+
+ul#listaUsuarios li:last-child {
+  border-bottom: none;
+}
+
+@media (max-width: 700px) {
+  .container {
+    max-width: 98vw;
+    padding: 12px 4vw;
+  }
+  input[type="text"],
+  input[type="number"] {
+    max-width: 98vw;
+  }
+}

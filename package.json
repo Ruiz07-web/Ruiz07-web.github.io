@@ -1,0 +1,15 @@
+{
+  "name": "calculadora-media-notas",
+  "version": "1.0.0",
+  "description": "Uma aplicação para calcular a nota necessária na prova 2 para atingir a média desejada.",
+  "main": "src/app.js",
+  "scripts": {
+    "start": "live-server src"
+  },
+  "author": "Seu Nome",
+  "license": "ISC",
+  "dependencies": {},
+  "devDependencies": {
+    "live-server": "^1.2.1"
+  }
+}
